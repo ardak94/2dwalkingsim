@@ -9,17 +9,50 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 8f;
     public float jumpingPower = 16f;
     private bool isFacingRight = true;
- 
+    private float activeMoveSpeed;
+    public float dashSpeed;
+    public float dashLenght = .5f, dashCooldown = 1f;
+    private float dashCounter;
+    private float dashCoolCounter;
+    
 
     
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
-    
+    private void Start()
+    {
+        activeMoveSpeed = speed;
+    }
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            if (dashCoolCounter <= 0 && dashCounter <= 0)
+            {
+                activeMoveSpeed = dashSpeed;
+                dashCounter = dashLenght;
+            }
+        }
+
+        if (dashCounter > 0)
+        {
+            dashCounter -= Time.deltaTime;
+
+            if (dashCounter <= 0)
+            {
+                activeMoveSpeed = speed;
+                dashCoolCounter = dashCooldown;
+            }
+        }
+
+        if (dashCoolCounter > 0)
+        {
+            dashCoolCounter -= Time.deltaTime;
+        }
+        
         horizontal = Input.GetAxisRaw("Horizontal");
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
@@ -39,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        rb.velocity = new Vector2(horizontal * activeMoveSpeed, rb.velocity.y);
     }
 
     private bool IsGrounded()

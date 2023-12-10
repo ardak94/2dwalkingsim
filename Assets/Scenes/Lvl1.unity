@@ -977,6 +977,14 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3831881498552095708, guid: 43f23ece20427b64087fa062e271e507, type: 3}
+      propertyPath: dashSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831881498552095708, guid: 43f23ece20427b64087fa062e271e507, type: 3}
+      propertyPath: dashLenght
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831881498552095708, guid: 43f23ece20427b64087fa062e271e507, type: 3}
       propertyPath: jumpingPower
       value: 16
       objectReference: {fileID: 0}

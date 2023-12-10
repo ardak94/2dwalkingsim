@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "IncMaxHealth")]
+[CreateAssetMenu(menuName = "Powerups/IncMaxHealth")]
 public class IncMaxHealth : PowerupEffect
 {
     public float amount;

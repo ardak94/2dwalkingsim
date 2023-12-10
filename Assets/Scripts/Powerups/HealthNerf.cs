@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "HealthNerf")]
+[CreateAssetMenu(menuName = "Powerups/HealthNerf")]
 public class HealthNerf : PowerupEffect
 {
     public float amount;

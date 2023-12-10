@@ -14,14 +14,17 @@ public class HealthManager : MonoBehaviour
     public float healthAmount = 100f;
     public float maxHealth = 100f;
 
-
+    public ParticleSystem healthIncEffect;
+    public ParticleSystem healthHealEffect;
+    public ParticleSystem healthDmgEffect;
     private void Start()
     {
         healthText.text = $"{healthAmount} / {maxHealth}";
-        
+        healthIncEffect.Pause();
+        healthHealEffect.Pause();
+        healthDmgEffect.Pause();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (healthAmount <= 0)
@@ -38,7 +41,6 @@ public class HealthManager : MonoBehaviour
         {
             Heal(5);
         }
-        
     }
 
     public void TakeDamage(float damage)
@@ -46,6 +48,7 @@ public class HealthManager : MonoBehaviour
         healthAmount -= damage;
         healthBar.fillAmount = healthAmount / maxHealth;
         healthText.text = $"{healthAmount} / {maxHealth}";
+        healthDmgEffect.Play();
     }
 
     public void Heal(float healingamount)
@@ -54,6 +57,10 @@ public class HealthManager : MonoBehaviour
         healthAmount = Mathf.Clamp(healthAmount, 0, maxHealth);
         healthBar.fillAmount = healthAmount / maxHealth;
         healthText.text = $"{healthAmount} / {maxHealth}";
+        if (healthAmount < maxHealth);
+        {
+            healthHealEffect.Play(); 
+        }
     }
 
     public void IncMaxHealth(float buffamount)
@@ -62,12 +69,9 @@ public class HealthManager : MonoBehaviour
         healthAmount += buffamount;
         healthBar.fillAmount = healthAmount / maxHealth;
         healthText.text = $"{healthAmount} / {maxHealth}";
+        healthIncEffect.Play();
     }
 
 
-
-
-
-    
     
 }

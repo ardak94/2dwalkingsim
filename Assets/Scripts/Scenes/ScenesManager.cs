@@ -19,6 +19,7 @@ public class ScenesManager : MonoBehaviour
         Lvl1,
         Lvl2,
         Lvl3,
+        Lvl4,
     }
 
     public void LoadScene(Scene sceneplaceholder)

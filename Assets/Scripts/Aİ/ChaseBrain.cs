@@ -7,6 +7,9 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Brains/Chase")]
 public class ChaseBrain : Brain
 {
+
+    
+    
     public string targetTag;
     public override void Think(EnemyThinker thinker)
     {
@@ -16,7 +19,7 @@ public class ChaseBrain : Brain
             var movement = thinker.gameObject.GetComponent<Movement>();
             if (movement)
             {
-                movement.MoveTowardsTarget(target.transform.position);
+                    movement.MoveTowardsTarget(target.transform.position);
             }
 
         }

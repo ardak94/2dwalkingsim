@@ -9,10 +9,8 @@ public class Movement : MonoBehaviour
 
     public void MoveTowardsTarget(Vector2 targetPosition)
     {
-        transform.position = Vector2.MoveTowards(transform.position, 
-            targetPosition,speed*Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, targetPosition,speed*Time.deltaTime);
     }
-
-
+    
 
 }

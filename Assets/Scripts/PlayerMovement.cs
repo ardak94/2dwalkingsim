@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,7 +15,9 @@ public class PlayerMovement : MonoBehaviour
     public float dashLenght = .5f, dashCooldown = 1f;
     private float dashCounter;
     private float dashCoolCounter;
-    
+    public Image shiftbar;
+
+
 
     
     [SerializeField] private Rigidbody2D rb;
@@ -24,10 +27,14 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         activeMoveSpeed = speed;
+        
     }
 
     void Update()
     {
+     
+        shiftbar.fillAmount = dashCoolCounter / dashCooldown;
+        
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             if (dashCoolCounter <= 0 && dashCounter <= 0)
@@ -52,6 +59,10 @@ public class PlayerMovement : MonoBehaviour
         {
             dashCoolCounter -= Time.deltaTime;
         }
+        
+
+        
+        
         
         horizontal = Input.GetAxisRaw("Horizontal");
 

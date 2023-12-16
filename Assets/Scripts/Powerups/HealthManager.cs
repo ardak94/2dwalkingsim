@@ -13,6 +13,8 @@ public class HealthManager : MonoBehaviour
     public TextMeshProUGUI healthText;
     public float healthAmount = 100f;
     public float maxHealth = 100f;
+    private PlayerAnimations animasyonlar;
+    
 
     public ParticleSystem healthIncEffect;
     public ParticleSystem healthHealEffect;
@@ -20,11 +22,10 @@ public class HealthManager : MonoBehaviour
     private void Start()
     {
         healthText.text = $"{healthAmount} / {maxHealth}";
-        healthIncEffect.Pause();
-        healthHealEffect.Pause();
-        healthDmgEffect.Pause();
+        animasyonlar = GameObject.FindGameObjectWithTag("AnimManagerTag").GetComponent<PlayerAnimations>();
     }
 
+    
     void Update()
     {
         if (healthAmount <= 0)
@@ -48,7 +49,7 @@ public class HealthManager : MonoBehaviour
         healthAmount -= damage;
         healthBar.fillAmount = healthAmount / maxHealth;
         healthText.text = $"{healthAmount} / {maxHealth}";
-        healthDmgEffect.Play();
+        animasyonlar.takedmganim.Play();
     }
 
     public void Heal(float healingamount)
@@ -59,7 +60,7 @@ public class HealthManager : MonoBehaviour
         healthText.text = $"{healthAmount} / {maxHealth}";
         if (healthAmount < maxHealth);
         {
-            healthHealEffect.Play(); 
+            animasyonlar.healanim.Play();
         }
     }
 
@@ -69,7 +70,7 @@ public class HealthManager : MonoBehaviour
         healthAmount += buffamount;
         healthBar.fillAmount = healthAmount / maxHealth;
         healthText.text = $"{healthAmount} / {maxHealth}";
-        healthIncEffect.Play();
+        animasyonlar.maxhealthupanim.Play();
     }
 
 

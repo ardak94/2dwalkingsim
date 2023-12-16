@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private float dashCounter;
     private float dashCoolCounter;
     public Image shiftbar;
-
+    private PlayerAnimations animasyonlar;
 
 
     
@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         activeMoveSpeed = speed;
-        
+        animasyonlar = GameObject.FindGameObjectWithTag("AnimManagerTag").GetComponent<PlayerAnimations>();
     }
 
     void Update()
@@ -41,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 activeMoveSpeed = dashSpeed;
                 dashCounter = dashLenght;
+                animasyonlar.dashanim.Play();
             }
         }
 
@@ -59,9 +60,8 @@ public class PlayerMovement : MonoBehaviour
         {
             dashCoolCounter -= Time.deltaTime;
         }
-        
 
-        
+
         
         
         horizontal = Input.GetAxisRaw("Horizontal");

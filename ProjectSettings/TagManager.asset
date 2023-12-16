@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Platform
   - Enemy
+  - AnimManagerTag
   layers:
   - Default
   - TransparentFX

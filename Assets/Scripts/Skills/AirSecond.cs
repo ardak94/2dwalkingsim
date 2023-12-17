@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fire : MonoBehaviour
+public class AirSecondary : MonoBehaviour
 {
 
-    public float life = 3;
+    public float life = 1;
 
     private void Awake()
     {

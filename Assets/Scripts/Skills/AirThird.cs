@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireTrap : MonoBehaviour
+public class AirThird : MonoBehaviour
 {
 
     public float life = 10;

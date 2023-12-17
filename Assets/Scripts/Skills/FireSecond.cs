@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireWall : MonoBehaviour
+public class FireSecondary : MonoBehaviour
 {
 
     public float life = 1;

@@ -10,6 +10,11 @@ public class PlayerAnimations : MonoBehaviour
     public ParticleSystem healanim;
     public ParticleSystem maxhealthupanim;
     public ParticleSystem takedmganim;
+    public ParticleSystem doublejumpanimF;
+    public ParticleSystem doublejumpanimW;
+    public ParticleSystem doublejumpanimE;
+    public ParticleSystem doublejumpanimA;
+
 
     private void Start()
     {
@@ -18,5 +23,9 @@ public class PlayerAnimations : MonoBehaviour
         healanim.Pause();
         maxhealthupanim.Pause();
         takedmganim.Pause();
+        doublejumpanimF.Pause();
+        doublejumpanimW.Pause();
+        doublejumpanimE.Pause();
+        doublejumpanimA.Pause();
     }
 }

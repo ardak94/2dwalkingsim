@@ -20,6 +20,7 @@ public class ScenesManager : MonoBehaviour
         Lvl2,
         Lvl3,
         Lvl4,
+        Shop,
     }
 
     public void LoadScene(Scene sceneplaceholder)
@@ -48,5 +49,9 @@ public class ScenesManager : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
     }
     
+    public void LoadShop()
+    {
+        SceneManager.LoadScene(Scene.Shop.ToString());
+    }
     
 }

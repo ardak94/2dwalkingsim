@@ -14,6 +14,10 @@ public class PlayerAnimations : MonoBehaviour
     public ParticleSystem doublejumpanimW;
     public ParticleSystem doublejumpanimE;
     public ParticleSystem doublejumpanimA;
+    public ParticleSystem state1;
+    public ParticleSystem state2;
+    public ParticleSystem state3;
+    public ParticleSystem state4;
 
 
     private void Start()
@@ -27,5 +31,9 @@ public class PlayerAnimations : MonoBehaviour
         doublejumpanimW.Pause();
         doublejumpanimE.Pause();
         doublejumpanimA.Pause();
+        state1.Pause();
+        state2.Pause();
+        state3.Pause();
+        state4.Pause();
     }
 }

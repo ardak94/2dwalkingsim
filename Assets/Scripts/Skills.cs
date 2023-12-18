@@ -385,6 +385,23 @@ public class Skills : MonoBehaviour
                 skillset = 1;
             }
             Debug.Log("skillset =" + skillset);
+            if (skillset == 1)
+            {
+                animasyonlar.state1.Play();
+            }
+            if (skillset == 2)
+            {
+                animasyonlar.state2.Play();
+            }
+            if (skillset == 3)
+            {
+                animasyonlar.state3.Play();
+            }
+            if (skillset == 4)
+            {
+                animasyonlar.state4.Play();
+            }
+
         }    
 
     }
